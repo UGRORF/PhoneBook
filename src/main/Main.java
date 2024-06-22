@@ -7,9 +7,7 @@ import java.util.TreeSet;
 public class Main {
     public static void main(String[] args) {
         PhoneBook pb = new PhoneBook();
-        pb.addContact("79885466866", "Artem");
-        pb.addContact("79286008977, 79281474324", "Natalya");
-        pb.addContact("79054268207", "Sergei");
+
         Scanner sc = new Scanner(System.in);
         System.out.println("Введите номер, имя или команду:");
 

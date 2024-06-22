@@ -27,7 +27,11 @@ public class PhoneBook {
 
     public void addContact(String phone, String name) {
         if(PhoneBook.isName(name) && PhoneBook.isNumber(phone)){
-            phoneBook.put(name, phone);
+            if(phoneBook.containsKey(name)){
+                updateContact(name, phone);
+            } else {
+                phoneBook.put(name, phone);
+            }
         }
     }
 
@@ -59,6 +63,15 @@ public class PhoneBook {
         }
 
         return contacts;
+    }
+
+    private void updateContact(String name, String phone) {
+        for (Map.Entry<String, String> entry : phoneBook.entrySet()){
+            if(entry.getKey().equals(name) && !entry.getValue().contains(phone)){
+                String phoneNumber = entry.getValue() + ", " + phone;
+                entry.setValue(phoneNumber);
+            }
+        }
     }
 
     // для обхода Map используйте получение пары ключ->значение Map.Entry<String,String>
