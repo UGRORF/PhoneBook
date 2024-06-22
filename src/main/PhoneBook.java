@@ -73,13 +73,4 @@ public class PhoneBook {
             }
         }
     }
-
-    // для обхода Map используйте получение пары ключ->значение Map.Entry<String,String>
-    // это поможет вам найти все ключи (key) по значению (value)
-    /*
-        for (Map.Entry<String, String> entry : map.entrySet()){
-            String key = entry.getKey(); // получения ключа
-            String value = entry.getValue(); // получения ключа
-        }
-    */
 }
